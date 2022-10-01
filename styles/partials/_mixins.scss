@@ -1,0 +1,19 @@
+@mixin flexbox($dis,$dir,$cut,$just,$align){
+    display: $dis;
+    flex-flow: $dir $cut;
+    justify-content: $just;
+    align-items: $align;
+}
+
+@mixin tablet{
+    @media screen and (max-width:950px) {
+        @content
+    };
+}
+
+@mixin mobile{
+    @media screen and (max-width:768px) {
+        @content
+    };
+}
+

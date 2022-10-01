@@ -1,0 +1,597 @@
+@import 'partials/vars', 'partials/reset', 'partials/mixins';
+
+body{
+    height: 100vh;
+    font-size: 75%;
+    font-family: $tipo-principal;
+    color: $negro;
+    background-color: $blanco;
+    text-transform: uppercase;
+
+    @media screen and (max-width:1100px) {
+      font-size: 55%;
+    }
+
+
+}
+
+.header {
+  position: fixed;
+  z-index: 1;
+  padding: .5em 3em;
+  top: 0;
+  width: 100%;
+  background-color: $blanco;
+  transition: all .5s ease;
+    &__inf {
+      border-top: 1px solid rgb(224, 219, 219);
+      border-bottom: 1px solid rgb(230, 227, 226);
+      transition: all .2s ease;
+
+    }
+    &__med {
+        // background-color: tomato;
+        transition: all .5s ease;
+       
+    }
+    &__sup {
+      transition: all .2s ease;
+
+    }
+  }
+
+.sup {
+  font-size: 1em;
+  padding: 1.1em 2em;
+    &__ul {
+        @include flexbox(flex,row,nowrap,flex-end,center);
+    }
+    &__li {
+        padding-right: 1em;
+        cursor: pointer;
+    }
+
+}
+.med {
+  padding: 1em 3em ;
+  @include flexbox(flex,row,nowrap,space-between,center);
+  @include mobile{
+    padding: 2em 3.5em;
+  }
+
+  &__mobile{
+    display: none;
+    @include mobile{
+      display: block;
+      @include flexbox(flex,row,nowrap,space-between,center);
+
+    }
+  }
+  &__extra {
+    @include flexbox(flex,row,nowrap,center,center);
+    // background-color: mediumblue;
+    gap: 1.5em;
+  }
+  &__form {
+    max-width: 10em;
+    font-size: 1em;
+    // background-color: rgb(218, 208, 218);
+    @include mobile{
+      display: none;
+    }
+  }
+  &__h1 {
+    // background-color: khaki;
+  }
+  &__img {
+    fill: black;
+    width: 3.2em;
+    height: 3.2em;
+  }
+  &__input {
+    width: 100%;
+    border: 1px solid $negro;
+    padding: .7em;
+    background-color: $blanco;
+
+  }
+  &__ul {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-left: 10em;
+    @include flexbox(flex,row,nowrap,space-between,center);
+    gap: 2.5em;
+
+    @include mobile{
+      display: none; 
+   }
+  }
+  &__li {
+    cursor: pointer;
+  }
+  &__logo {
+  }
+  &__svg {
+    width: 2em;
+    height: 2em;
+    fill: $gris-oscuro;
+    cursor: pointer;
+    // background-color: aqua;
+    @include mobile{
+      width: 3em;
+      height: 3em;
+      margin: 0 .5em;
+    }
+  }
+  &__svg--user{
+    display: none;
+    @include mobile{
+      display: block;
+    }
+  }
+
+}
+.inf {
+    text-align: center;
+    padding: 1em 0;
+    font-size: 1.2em;
+    @include flexbox(flex,row,nowrap,center,center);
+    gap: 1em;
+    &__p{
+      font-weight: 600;
+    }
+    &__a{
+      font-size: .9em;
+      text-decoration: underline;
+
+    }
+}
+
+.sup-banner {
+    width: 100%;
+    background-color: aliceblue;
+    &__img {
+    
+    }
+}
+
+.main {
+    // background-color: aquamarine;
+    width: 92%;
+    margin: 0 auto;
+    padding-bottom: 3em;
+
+}
+.landing {
+    margin: 2em 0 2.8em 0;
+    // background-color: mediumvioletred;
+  &__img {
+  }
+  &--one {
+  }
+  &--two {
+  }
+}
+
+
+.cards {
+  // background-color: firebrick;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1em;
+  font-size: 1.6em;
+  margin-bottom: 5em;
+
+  @include tablet{
+    grid-template-columns: 1fr;
+    gap: 3em;
+  }
+  &__link{
+    // background-color: mediumaquamarine;
+    max-width: fit-content;
+
+   overflow: hidden;
+  }
+
+  &__a {
+    width: 120%;
+    font-size: .8em;
+    text-transform: initial;
+
+    //  background-color: red;
+    display: inline-block;
+
+    transform: translateX(-7.5%);
+    transition: all .3s ease;
+
+    &:hover{
+      transform: translateX(10%);
+    }
+
+    &::before{
+      content: '>';
+      margin: 0 .8em 0 0;
+      display: inline-block;
+      // background-color: mediumpurple;
+    }
+    &::after{
+      content: '>';
+      margin: 0 0 0 .8em;
+      display: inline-block;
+      // background-color: mediumpurple;
+    }
+  }
+  &__col {
+  }
+  &__h2 {
+    font-weight: bold;
+    margin-top: 1em;
+    font-size: 1em;
+  }
+  &__img {
+    // background-color: black;
+  }
+  &__p {
+    max-width: 80%;
+    padding: 1em 0;
+    font-size: .75em;
+  }
+}
+.categories {
+  font-size: 1.5em;
+  // background-color: mediumpurple;
+&__row{
+  // background-color: navajowhite;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1em;
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 3em;
+  }
+
+}
+&__a {
+  font-size: .9em;
+}
+&__col {
+  // background-color: navy;
+}
+&__h3 {
+  font-size: .8em;
+  margin-bottom: 1.5em;
+}
+&__h4 {
+  font-size: 1.1em;
+  font-weight: 550;
+  margin: 1.3em 0 1.8em 0;
+}
+&__img {
+}
+}
+  
+.cards-info {
+    margin: 4em 0;
+    // background-color: yellow;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: .8em;
+    font-size: 1.5em;
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: 3em;
+    }
+
+  &__a {
+    font-size: .9em;
+  }
+  &__col {
+    // background-color: mediumvioletred;
+  }
+  &__h4 {
+    padding-top: 2em;
+    font-size: 1em;
+    font-weight: 600;
+  }
+  &__img {
+  }
+  &__p {
+    max-width: 25em;
+    padding: 1em 0;
+    font-size: .8em;
+  }
+}
+
+
+
+.redes {
+  &__li {
+    cursor: pointer;
+    &:hover svg{
+      fill: $gris;
+    }
+  }
+  &__svg {
+    width: 2em;
+    height: 2em;
+    margin-top: .6em;
+    margin-right: 2em;
+    fill: $blanco
+  }
+  &__ul {
+    @include flexbox(flex,row,nowrap,flex-start,center);
+  }
+}
+.register {
+  background-color: $rojo;
+  padding: 2em 0;
+  color: $blanco;
+  @include flexbox(flex,column,nowrap,center,center);
+
+  &__form {
+    font-size: 1.5em;
+    width: 100%;
+    max-width: 35em;
+    color: $negro;
+    margin: 2em 0;
+    // background-color: aquamarine;
+    @include flexbox(flex,row,nowrap,center,flex-start);
+
+  }
+  &__h4 {
+    font-size: 2em;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-bottom: .3em;
+
+    @include mobile{
+      max-width: 90%;
+      text-align: center;
+    }
+
+  }
+  &__input {
+    width: 65%;
+    padding: .7em 1.1em;
+    background-color: $blanco;
+
+    &::placeholder{
+      font-size: .8em;
+    }
+
+  }
+  &__wrapper{
+    overflow: hidden;
+    text-transform: initial;
+  }
+  &__submit {
+    text-align: center;
+    padding: .7em 1.1em;
+    background-color:$negro;
+    color: $blanco;
+    cursor: pointer;
+    transition: all .3s ease;
+   
+    position: relative;
+
+    &:hover {
+      transform: translateY(-100%);
+    }
+    &::after{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $blanco;
+      color: $negro;
+      padding: .7em 1em;
+      transform: translateY(100%);
+      content:attr(data-label);
+    }
+
+  }
+
+  &__p {
+    text-transform: initial;
+    font-size: 1.2em;
+  }
+  &__span {
+    text-transform: initial;
+    font-size: 1em;
+    @include mobile{
+      max-width: 90%;
+      text-align: center;
+    }
+  }
+}
+
+.e-data {
+    &__li {
+      text-transform: initial;
+      padding: .3em 0;
+      font-size: .9em;
+      cursor: pointer;
+      &:hover{
+        color: $gris;
+      }
+    }
+    &__ul {
+    }
+  }
+.e-inf {
+
+    &__col {
+      // background-color: mediumseagreen;
+      &:first-child {
+          @include flexbox(flex,row,nowrap,center,center);
+      }
+      // &:nth-child(2){
+      //   width: calc(100%/3);
+      // }
+      &:nth-child(3){
+          text-align: end;
+      }
+    }
+
+    &__span {
+      font-weight: 550;
+      cursor: pointer;
+      &:hover{
+        color: $gris;
+      }
+    }
+    &__svg {
+        width: 2em;
+        height: 2em;
+        margin-right: 1em;
+       
+    }
+    &__img{
+       width: 3em;
+        height: 3em;
+        margin-left: 10em;
+        @include mobile{
+          display: none;
+        }
+    }
+    
+}
+.e-med {
+    &__col {
+      @include mobile{
+        margin: 1em 0;
+      }
+    }
+    &__h5 {
+      font-size: 1.3em;
+      font-weight: 500;
+    }
+    &__li {
+      padding: .4em 0;
+      cursor: pointer;
+      &:hover{
+        color: $gris;
+      }
+    }
+    &__ul {
+      margin-top: 1em;
+      text-transform: initial;
+    }
+}
+.e-sup {
+    
+    &__col {
+      // background-color: teal;
+      @include mobile{
+        margin: 1em 0;
+
+      }
+    }
+    &__h5 {
+      font-weight: 550;
+      margin-bottom: 1em;
+    }
+    &__input {
+      background-color: transparent;
+      color: $blanco;
+      font-size: 1em;
+      padding: .5em;
+      margin-top: .6em;
+      width: 110%;
+      border: 1px solid $gris;
+    }
+    &__li {
+      // background-color: mediumblue;
+      margin-bottom: 1em;
+   
+    }
+}
+.end {
+    font-size: 1em;
+    text-align: center;
+    padding: 5em 2.5em 0 2.5em;
+    background-color: $negro;
+    color: $blanco;
+
+
+    &__inf {
+      font-size: 1em;
+      padding: 2em 0;
+      text-transform: initial;
+      // background-color: mediumaquamarine;
+      @include flexbox(flex,row,nowrap,space-between,center);
+      gap: 4em;
+    }
+    &__med {
+      // background-color: lightblue;
+      @include flexbox(flex,row,wrap,flex-start,flex-start);
+      gap: calc(100%/4 - 5em);
+      padding: 2em 0 5em 0;
+      text-align: left;
+      font-size: 1em;
+      border-top: 1px solid ;
+      border-bottom: 1px solid $gris-oscuro;
+      color: $gris-oscuro;
+
+      @include mobile{
+        gap: 50%;
+      }
+
+   
+    }
+    &__sup {
+      padding-bottom: 2em;
+      font-size: 1.2em;
+      // background-color: lightcoral;
+      @include flexbox(flex,row,wrap,flex-start,flex-start);
+      gap: calc(100%/3 - 10em);
+      text-align: start;
+
+      @include mobile{
+        gap: calc(100%/2 - 30%);
+
+      }
+
+    }
+  }
+
+.footer {
+    width: 100%;
+    margin: 0 auto;
+    background-color: mediumaquamarine;
+    &__info {
+        background-color: $gris-fondo;
+        padding: 6em 3em;
+        line-height: 1.5em;
+        text-transform: initial;
+        color: $gris;
+    }
+    &__p {
+
+    }
+    &__register {
+
+
+    }
+}
+
+.fixed{
+        
+  .sup{
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .med{
+    position: relative;
+    background-color: $blanco;
+    z-index: 2;
+  }
+
+  .inf{
+    margin: -4em auto 0;
+    opacity: 0;
+  }
+
+
+}

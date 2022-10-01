@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+p a {
+    display: inline;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+/* Evitamos problemas con las imagenes */
+img, picture, video, iframe, figure {
+max-width: 100%;
+width: 100%;
+display: block;
+/* opcional */
+-o-object-fit: cover;
+    object-fit: cover;
+/* opcional */
+object-position: center center;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+    font-size: 1em;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+form, input, textarea, select, button, label {
+    font-family: inherit;
+    font-size: inherit;
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+    background-color: transparent;
+    color: inherit;
+    display: block;
+    /* opcional */
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+input{
+    outline: none;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
